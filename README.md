@@ -2,4 +2,6 @@
 
 I hadn't seen puzzles like this before. Kinda fun. Good chance to have a first play with Scala.js.
 
-Hammer - not scalpel.
+Scala.js - awesome.
+
+This solution - Hammer, not scalpel.
