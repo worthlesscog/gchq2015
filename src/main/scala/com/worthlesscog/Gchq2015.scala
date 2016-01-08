@@ -154,23 +154,17 @@ object Gchq2015 extends JSApp {
         table(f, for (r <- 0 to ce) yield tr(for (c <- 0 to re + 1) yield data(c, r))).render
     }
 
-    def plot(c: String, x: Int, y: Int) { jQuery("#" + bid(x, y)).attr("class", c) }
-    def plotBlock(f: Addr)(c: Int, r: Int) {
-        if (jQuery("#" + bid(c, r)).attr("class").getOrElse("") != BLACK) {
-            plot(BLACK, c, r)
-            c1(c) |= pow2(r)
-            r1(r) |= pow2(c)
-            f(c, r)
+    def plot(f: Addr, c: String, cb: Array[Int], rb: Array[Int])(x: Int, y: Int) {
+        val i = "#" + bid(x, y)
+        if (jQuery(i).attr("class").getOrElse("") != c) {
+            jQuery(i).attr("class", c)
+            cb(x) |= pow2(y)
+            rb(y) |= pow2(x)
+            f(x, y)
         }
     }
-    def wipeBlock(f: Addr)(c: Int, r: Int) {
-        if (jQuery("#" + bid(c, r)).attr("class").getOrElse("") != WHITE) {
-            plot(WHITE, c, r)
-            c0(c) |= pow2(r)
-            r0(r) |= pow2(c)
-            f(c, r)
-        }
-    }
+    def plotBlock(f: Addr) = plot(f, BLACK, c1, r1) _
+    def wipeBlock(f: Addr) = plot(f, WHITE, c0, r0) _
 
     def flagBut(i: String) { jQuery("#" + i).attr("class", "but1") }
     def flagCol(c: Int, r: Int) = flagBut(cid(c))
