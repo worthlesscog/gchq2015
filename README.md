@@ -5,3 +5,5 @@ I hadn't seen puzzles like this before. Kinda fun. Good chance to have a first p
 Scala.js - awesome.
 
 This solution - Hammer, not scalpel.
+
+Use sbt to build and fastOptJS or fullOptJS to build the target js.
