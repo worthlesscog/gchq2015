@@ -8,6 +8,6 @@ Basic idea was to work out all the possible solutions for a row/column as a bit 
 
 I wasn't sure if it would work but it works for this puzzle. Clicking things is more interesting than a computer just giving you the answer.
 
-This solution - Hammer, not scalpel.
+This solution - hammer, not scalpel.
 
 Use sbt to build and fastOptJS or fullOptJS to build the target js.
