@@ -10,4 +10,8 @@ I wasn't sure if it would work but it works for this puzzle. Clicking things is 
 
 This solution - hammer, not scalpel.
 
+Looks like this -
+
+![Grid snapshot](https://github.com/worthlesscog/gchq2015/blob/master/res/capture.png)
+
 Use sbt to build and fastOptJS or fullOptJS to build the target js.
